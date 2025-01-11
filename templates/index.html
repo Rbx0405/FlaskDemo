@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitCheck Login/Signup</title>
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Auth Container */
+      .auth-container {
+        width: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #333333;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        padding: 20px;
+        color: whitesmoke;
+      }
+
+      /* Form Container */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Hidden Class */
+      .hidden {
+        display: none;
+      }
+
+      /* Form Elements */
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      label {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: whitesmoke;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .btn {
+        padding: 10px 15px;
+        background: black;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background: #0056b3;
+      }
+
+      p {
+        font-size: 14px;
+        color: whitesmoke;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <!-- Login Form -->
+      <div class="form-container" id="login-form">
+        <h2>Login</h2>
+        <form>
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" class="btn">Login</button>
+          <p>
+            Don't have an account?
+            <a href="#" onclick="showSignup()">Signup here</a>
+          </p>
+        </form>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="form-container hidden" id="signup-form">
+        <h2>Signup</h2>
+        <form>
+          <label for="signup-name">Name</label>
+          <input
+            type="text"
+            id="signup-name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="signup-email">Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" class="btn">Signup</button>
+          <p>
+            Already have an account?
+            <a href="#" onclick="showLogin()">Login here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script>
+      // Show Signup Form
+      function showSignup() {
+        document.getElementById("login-form").classList.add("hidden");
+        document.getElementById("signup-form").classList.remove("hidden");
+      }
+
+      // Show Login Form
+      function showLogin() {
+        document.getElementById("signup-form").classList.add("hidden");
+        document.getElementById("login-form").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
